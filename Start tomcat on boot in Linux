@@ -1,0 +1,25 @@
+http://www.javasavvy.com/start-tomcat-boot-linux/
+
+cd /etc/init.d
+vi tomcat
+
+chmod 775 tomcat
+create symbolic link of the tomcat script in rc.d directory
+
+Add Tomcat script to rc.d directory
+We need to create two symbolic links
+
+K{level}tomcat    –  K76tomcat  means it kills  the process after K75
+S{level}tomcat    –  S98tomcat means it starts the tomcat after S97.
+Run the below Symbolic commands in Terminal:
+
+ln -s /etc/init.d/tomcat /etc/rc.d/rc6.d/K26tomcat 
+
+ln -s /etc/init.d/tomcat /etc/rc.d/rc0.d/K26tomcat
+
+ln -s /etc/init.d/tomcat /etc/rc.d/rc3.d/S81tomcat
+
+ln -s /etc/init.d/tomcat /etc/rc.d/rc2.d/S81tomcat
+ln -s /etc/init.d/tomcat /etc/rc.d/rc5.d/S81tomcat
+I used to prefer to start the tomcat after mysql start.
+
